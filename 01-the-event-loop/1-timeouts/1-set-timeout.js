@@ -9,6 +9,7 @@
 const callback1 = () => {
   console.log('hello from timeout 1');
 };
+// call callback function in 3000 milliseconds
 setTimeout(callback1, 3000);
 
 console.log('scheduled timeout 1');
