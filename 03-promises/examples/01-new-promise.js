@@ -15,7 +15,7 @@ const { log } = labeledLogger();
 */
 
 const executor = (resolve, reject) => {
-  debugger;
+  // debugger;
   log('in executor:', resolve, reject);
   // executors do not return anything
 };
@@ -27,4 +27,4 @@ log(promise2);
 
 log('= = = =  the call stack is empty  = = = =');
 
-debugger;
+// debugger;

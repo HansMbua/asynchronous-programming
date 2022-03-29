@@ -34,8 +34,8 @@ new Promise((resolve) => {
   log('resolve executor'); // 1
   resolve('success!');
 })
-  .then((val) => logFulfilledValue(val)) // 5
-  .catch((val) => logRejectedValue(val));
+  .then(logFulfilledValue) // 5
+  .catch(logRejectedValue);
 
 // rejected promise
 new Promise((resolve, reject) => {

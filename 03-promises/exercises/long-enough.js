@@ -14,16 +14,18 @@ const { log, error } = labeledLogger();
 new Promise((resolve, reject) => {
   const userInput = prompt('enter something longer than 5 characters');
   if (userInput !== null && userInput.length > 5) {
-    resolve('your input is long enough');
+    resolve(' your input is long enough');
   } else {
-    reject('your input is too short');
+    reject(' your input is too short');
   }
 })
-  .then(resolvedValue => {
-    log('resolved value: ', resolvedValue);
-  })
-  .catch(rejectionValue => {
-    log('rejected value: ', rejectionValue);
-  });
+.then((resolvedValue) => log('resolved value:'+resolvedValue))
+.catch((rejectValue) => error('rejected value',rejectValue));
+  // .then(resolvedValue => {
+  //   log('resolved value: ', resolvedValue);
+  // })
+  // .catch(rejectionValue => {
+  //   log('rejected value: ', rejectionValue);
+  // });
 
 log('= = = =  the call stack is empty  = = = =');
