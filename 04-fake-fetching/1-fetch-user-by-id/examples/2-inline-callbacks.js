@@ -44,4 +44,17 @@ fetchUserById(10)
   .then((user) => log(user))
   .catch((err) => error(err));
 
+  log('fetching User 15')
+  fetchUserById(15)
+  .then((res) => {
+    if(!res.ok){
+      throw new Error(`${res.status}: ${res.statusText}` );
+    }
+     return res.json;
+  }
+ 
+    )
+    .then((value) => log(value))
+    .catch((err) => error(err));
+
 log('= = = =  the call stack is empty  = = = =');

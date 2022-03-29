@@ -77,4 +77,12 @@ fetchUserById(12)
   .then((user) => logUser(user))
   .catch((err) => handleRejection(err));
 
+  fetchUserById(3)
+  .then((value) => handleResponse(value))
+  .then((value) => logUser(value))
+  .catch((value) => handleRejection(value));
+
+
+
+
 log('= = = =  the call stack is empty  = = = =');
