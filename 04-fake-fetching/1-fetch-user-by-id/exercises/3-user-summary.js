@@ -15,10 +15,12 @@ const handleResponse = (res) => {
 };
 
 const createSummary = (user) => {
-  // write me!
+  
+  return (`{ \n ${user.name}, \n ${user.address.city} ,\n ${user.company.name}, \n }`);
 };
 
 const handleError = (err) => error(err);
+const logValue = (value) => log(value);
 
 // --- use the callbacks ---
 
@@ -28,7 +30,12 @@ log('fetching and processing user 5');
       city: 'Roscoeview',
       companyName: 'Keebler LLC'
     } */
-__;
+fetchUserById(5)
+.then((value) => handleResponse(value))
+.then((value) => createSummary(value))
+.then((value) => logValue(value))
+.catch((err) => handleError(err));
+
 
 log('fetching and processing user 1');
 /*  {
@@ -36,7 +43,11 @@ log('fetching and processing user 1');
       city: 'Gwenborough',
       companyName: 'Romaguera-Crona',
     } */
-__;
+fetchUserById(1)
+.then((value) => handleResponse(value))
+.then((value) => createSummary(value))
+.then((value) => logValue(value))
+.catch((err) => handleError(err));
 
 log('fetching and processing user 10');
 /*  {
@@ -44,10 +55,18 @@ log('fetching and processing user 10');
       city: 'Lebsackbury',
       companyName: 'Hoeger LLC',
     } */
-__;
+fetchUserById(10)
+.then((value) => handleResponse(value))
+.then((value) => createSummary(value))
+.then((value) => logValue(value))
+.catch((err) => handleError(err));
 
 log('fetching and processing user -1');
 // 404
-__;
+fetchUserById(-1)
+.then((value) => handleResponse(value))
+.then((value) => createSummary(value))
+.then((value) => logValue(value))
+.catch((err) => handleError(err));
 
 log('= = = =  the call stack is empty  = = = =');
