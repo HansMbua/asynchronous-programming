@@ -12,6 +12,8 @@ const intervalId = setInterval(callback1, 500, 'hi!');
 const callback2 = (arg1, arg2) => {
   log(arg1, arg2);
   clearInterval(intervalId);
+  // reclicing the interval from the value
+  intervalId = null;
 };
 setTimeout(callback2, 5000, 'good', 'bye');
 
